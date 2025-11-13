@@ -112,7 +112,7 @@ calibrated_xLimits_REL_nm = calibrated_xLimits_abs_nm - lambda_ref_nm;
 % --- 6. Plot 2: Relative Laser Wavelength (nm) ---
 figure('Position', [100, 100, 1200, 700]);
 % PLOT WITH THE NEW RELATIVE AXIS
-plot(lambda_nm_axis_RELATIVE, smooth_pmt, 'LineWidth', 2.5);
+plot(lambda_nm_axis_RELATIVE, smooth_pmt, 'LineWidth', 4);
 hold on;
 plot(calibrated_peak_locations_REL_nm, peak_heights, 'rv', 'MarkerFaceColor', 'r', 'MarkerSize', 6);
 
@@ -121,10 +121,10 @@ for k = 1:num_peaks_found
     label_str = peak_labels{k};
     text(calibrated_peak_locations_REL_nm(k), peak_heights(k) + y_offset, label_str, ...
         'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', ...
-        'FontSize', 26, 'FontWeight', 'bold');
+        'FontSize', 30, 'FontWeight', 'bold');
 end
 
-set(gca, 'FontSize', 34);
+set(gca, 'FontSize', 36);
 
 % Set x-limits using the new relative values
 xlim([min(calibrated_xLimits_REL_nm), max(calibrated_xLimits_REL_nm)]);
